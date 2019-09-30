@@ -17,7 +17,7 @@ public class Student {
 
     public void addGrade(int g) {
         this.grades.add(g);
-        System.out.println("New grade was added: " + g);
+        System.out.println("New grade was added: " + g + " for " + getName());
     }
 
     public double getGradeAverage() {
