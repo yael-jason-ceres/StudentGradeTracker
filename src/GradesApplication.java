@@ -36,16 +36,59 @@ public class GradesApplication {
         Students.get("ryan").addGrade(89);
         Students.get("ryan").addGrade(84);
 
+
+
+
+
         // Run the application
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Welcome!\n");
 
+        // APP: Print names of each user
         System.out.println("Here are the Github usernames of our students:\n");
 
         for (String k : Students.keySet()) {
             System.out.print("|" + Students.get(k).getName() + "| ");
         }
+
+        Boolean continueLoop = true;
+
+        System.out.println("\nStudents.containsValue(\"yael\") = " + Students.containsValue("yael");
+
+
+//        do {
+//            // APP: See more information
+//            System.out.println("\n\nWhat student would you like to see more information on?");
+//
+//            String seeMoreInfo = sc.nextLine();
+//
+//            // APP: Check if value inputted value is in the hashmap
+//            continueLoop = Students.containsValue(seeMoreInfo);
+//            System.out.println("continueLoop = " + continueLoop);
+//
+//            // APP: condition statment what to do next
+//            if (!continueLoop) {
+//                System.out.println("Sorry, no student found with the GitHub username of \"" + seeMoreInfo + "\".");
+//            } else {
+//                System.out.print("Name: " + Students.get(seeMoreInfo).getName() + " Github username: " + Students.keySet());
+//                System.out.println("Current average: " + Students.get(seeMoreInfo).getGradeAverage());
+//                continueLoop = false;
+//            }
+//
+//            // Ask again if they want to see more information
+//            System.out.println("Would you like to see more info?");
+//
+//            String askAgain = sc.nextLine();
+//
+//            if (askAgain == "no" || askAgain == "n") {
+//                continueLoop = false;
+//            }
+//
+//        } while (continueLoop);
+
+
+
 
     }
 
