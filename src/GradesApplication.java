@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class GradesApplication {
 
@@ -35,7 +36,16 @@ public class GradesApplication {
         Students.get("ryan").addGrade(89);
         Students.get("ryan").addGrade(84);
 
+        // Run the application
+        Scanner sc = new Scanner(System.in);
 
+        System.out.println("Welcome!\n");
+
+        System.out.println("Here are the Github usernames of our students:\n");
+
+        for (String k : Students.keySet()) {
+            System.out.print("|" + Students.get(k).getName() + "| ");
+        }
 
     }
 
