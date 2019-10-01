@@ -37,13 +37,10 @@ public class GradesApplication {
         Students.get("ryan").addGrade(84);
 
 
-
-
-
         // Run the application
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Welcome!\n");
+        System.out.println("\nWelcome!\n");
 
         // APP: Print names of each user
         System.out.println("Here are the Github usernames of our students:\n");
@@ -53,42 +50,33 @@ public class GradesApplication {
         }
 
         Boolean continueLoop = true;
+        Boolean containsInput;
 
-        System.out.println("\nStudents.containsValue(\"yael\") = " + Students.containsValue("yael");
+        do {
+            // APP: See more information
+            System.out.println("\n\nWhat student would you like to see more information on?");
 
+            String seeMoreInfo = sc.nextLine();
 
-//        do {
-//            // APP: See more information
-//            System.out.println("\n\nWhat student would you like to see more information on?");
-//
-//            String seeMoreInfo = sc.nextLine();
-//
-//            // APP: Check if value inputted value is in the hashmap
-//            continueLoop = Students.containsValue(seeMoreInfo);
-//            System.out.println("continueLoop = " + continueLoop);
-//
-//            // APP: condition statment what to do next
-//            if (!continueLoop) {
-//                System.out.println("Sorry, no student found with the GitHub username of \"" + seeMoreInfo + "\".");
-//            } else {
-//                System.out.print("Name: " + Students.get(seeMoreInfo).getName() + " Github username: " + Students.keySet());
-//                System.out.println("Current average: " + Students.get(seeMoreInfo).getGradeAverage());
-//                continueLoop = false;
-//            }
-//
-//            // Ask again if they want to see more information
-//            System.out.println("Would you like to see more info?");
-//
-//            String askAgain = sc.nextLine();
-//
-//            if (askAgain == "no" || askAgain == "n") {
-//                continueLoop = false;
-//            }
-//
-//        } while (continueLoop);
+            // APP: Check if value inputted value is in the hashmap
+            containsInput = Students.containsKey(seeMoreInfo);
 
+            // APP: condition statment what to do next
+            if (!containsInput) {
+                System.out.println("Sorry, no student found with the GitHub username of \"" + seeMoreInfo + "\".");
+            } else {
+                System.out.print("\nName: " + Students.get(seeMoreInfo).getName() + ", Github username: " + seeMoreInfo + "\n");
+                System.out.println("Current average: " + Students.get(seeMoreInfo).getGradeAverage());
+            }
 
+            // Ask again if they want to see more information
+            System.out.println("\nWould you like to see more info?");
+            String askAgain = sc.nextLine();
 
+            // Conditional to see if you want to continue and changes boolean that control while loop
+            if (askAgain.equals("no") || askAgain.equals("n")) continueLoop = false;
+
+        } while (continueLoop);
 
     }
 
